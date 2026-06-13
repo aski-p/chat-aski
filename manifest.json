@@ -1,0 +1,21 @@
+{
+    "name": "Chat Aski",
+    "short_name": "ChatAski",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#222224",
+    "theme_color": "#222224",
+    "description": "로컬 AI 모델을 기반으로 한 프라이빗 채팅 서비스입니다.",
+    "icons": [
+        {
+            "src": "icons/app-icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/app-icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
