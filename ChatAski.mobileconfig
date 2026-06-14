@@ -8,22 +8,13 @@
             <key>Type</key>
             <string>webClip</string>
             <key>URL</key>
-            <string>https://aski-p.github.io/chat-aski/</string>
+            <string>https://chat-aski.vercel.app/</string>
             <key>DisplayName</key>
             <string>Chat Aski</string>
-            <key>Icon</key>
-            <dict>
-                <key>URL</key>
-                <string>https://aski-p.github.io/chat-aski/icons/app-icon-512.png</string>
-                <key>AspectRatio</key>
-                <integer>1</integer>
-                <key>Tinting</key>
-                <false/>
-            </dict>
         </dict>
     </array>
     <key>PayloadDescription</key>
-    <string>Chat Aski PWA를 홈 화면에 설치합니다.</string>
+    <string>Chat Aski PWA 설치 파일입니다. 홈 화면에 아이콘이 추가됩니다.</string>
     <key>PayloadDisplayName</key>
     <string>Chat Aski</string>
     <key>PayloadIdentifier</key>
@@ -33,7 +24,7 @@
     <key>PayloadType</key>
     <string>Configuration</string>
     <key>PayloadUUID</key>
-    <string>3F2A1B4C-5D6E-7890-ABCD-EF1234567890</string>
+    <string>AB12CD34-56EF-78GH-90IJ-KL12MN34OP56</string>
     <key>PayloadVersion</key>
     <integer>1</integer>
 </dict>
