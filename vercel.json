@@ -1,4 +1,4 @@
 {
-  "buildCommand": "flutter build web --release",
+  "buildCommand": "flutter build web --release && cp -f download.html ChatAski.mobileconfig ./build/web/ && echo '✅ Download files copied to build/web/'",
   "outputDirectory": "build/web"
 }
