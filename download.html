@@ -15,8 +15,8 @@ h1{font-size:2.2rem;margin-bottom:6px;color:#fff}
 .card-icon{font-size:2.4rem;margin-bottom:8px;display:block}
 .card-title{font-weight:700;font-size:1.15rem;margin-bottom:4px}
 .card-desc{color:#aaa;font-size:.85rem;margin-bottom:14px;line-height:1.5}
-.card a{display:inline-block;background:#3b82f6;color:#fff;text-decoration:none;padding:10px 24px;border-radius:10px;font-weight:600;font-size:.95rem;transition:.15s}
-.card a:hover{background:#2563eb}
+.card a,.card button{display:inline-block;background:#3b82f6;color:#fff;text-decoration:none;padding:10px 24px;border-radius:10px;font-weight:600;font-size:.95rem;transition:.15s;border:none;cursor:pointer}
+.card a:hover,.card button:hover{background:#2563eb}
 .home-btn{display:inline-block;margin-top:24px;color:#888;text-decoration:none;font-size:.9rem;padding:10px 20px;border:1px solid #444;border-radius:10px;transition:.2s}
 .home-btn:hover{color:#fff;border-color:#888}
 </style>
@@ -26,28 +26,24 @@ h1{font-size:2.2rem;margin-bottom:6px;color:#fff}
   <h1>Chat Aski</h1>
   <p class="subtitle">플랫폼을 선택하여 설치하세요</p>
 
+  <!-- Android APK -->
   <div class="card">
     <span class="card-icon">&#129302;</span>
     <div class="card-title">Android APK</div>
-    <div class="card-desc">안드로이드 기기에서 직접 실행 가능한 APK 파일입니다.<br>다운로드 후 파일을 탭하여 설치하세요.</div>
-    <a href="https://aski-p.github.io/chat-aski/downloads/chat-aski-v1.0.0.apk">APK 다운로드</a>
+    <div class="card-desc">안드로이드 기기에서 직접 실행 가능한 파일입니다.<br>다운로드 후 파일을 탭하여 설치하세요.</div>
+    <a href="/chat-aski.apk" download><b>APK 다운로드</b></a>
   </div>
 
+  <!-- iOS PWA -->
   <div class="card">
     <span class="card-icon">&#127820;</span>
-    <div class="card-title">iOS / iPadOS PWA</div>
-    <div class="card-desc">사파리에서 프로필을 설치하면 홈 화면에 앱 아이콘이 추가됩니다.<br>앱과 같은 경험을 제공합니다.</div>
-    <a href="https://aski-p.github.io/chat-aski/ChatAski.mobileconfig">PWA 설치</a>
+    <div class="card-title">iOS / iPadOS</div>
+    <div class="card-desc">프로필을 설치하면 홈 화면에 앱이 추가됩니다.<br>설치 후 아이콘을 탭해 사용하세요.</div>
+    <a href="/ChatAski.mobileconfig" download><b>iOS 프로필 설치</b></a>
   </div>
 
-  <div class="card">
-    <span class="card-icon">&#128187;</span>
-    <div class="card-title">Web App (Flutter Web)</div>
-    <div class="card-desc">브라우저에서 바로 실행 가능한 웹 앱 패키지입니다.<br>다운로드 후 압축을 풀어 사용하세요.</div>
-    <a href="https://aski-p.github.io/chat-aski/downloads/chat-askiv1.0.0.zip">ZIP 다운로드</a>
-  </div>
-
-  <a class="home-btn" href="/chat-aski/index.html">&#8592; 홈으로 돌아가기</a>
+  <!-- Home 버튼 -->
+  <a class="home-btn" href="/">&larr; 홈으로 돌아가기</a>
 </div>
 </body>
 </html>
