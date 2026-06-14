@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>Type</key>
+            <string>webClip</string>
+            <key>URL</key>
+            <string>https://aski-p.github.io/chat-aski/</string>
+            <key>DisplayName</key>
+            <string>Chat Aski</string>
+            <key>Icon</key>
+            <dict>
+                <key>URL</key>
+                <string>https://aski-p.github.io/chat-aski/icons/app-icon-512.png</string>
+                <key>AspectRatio</key>
+                <integer>1</integer>
+                <key>Tinting</key>
+                <false/>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string>Chat Aski PWA를 홈 화면에 설치합니다.</string>
+    <key>PayloadDisplayName</key>
+    <string>Chat Aski</string>
+    <key>PayloadIdentifier</key>
+    <string>com.aski.chataski</string>
+    <key>PayloadOrganization</key>
+    <string>Aski</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>3F2A1B4C-5D6E-7890-ABCD-EF1234567890</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>
