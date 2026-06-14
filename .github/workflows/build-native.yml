@@ -1,0 +1,83 @@
+name: Build Android APK + iOS IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths: ['lib/**', 'web/**', 'pubspec.yaml']
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.x'
+          channel: 'stable'
+          architecture: x64
+      
+      - name: Android SDK setup
+        uses: android-actions/setup-android@v3
+
+      - run: |
+          flutter config --enable-android-emulator
+          flutter pub get
+          flutter build apk --release
+      
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: chat-aski-android
+          path: build/app/outputs/flutter-apk/*.apk
+
+  ios-pwa-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate iOS mobileconfig
+        run: |
+          # Create PWA install config for iOS
+          cat > ChatAski.mobileconfig << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>PayloadContent</key>
+            <array>
+              <dict>
+                <key>URL</key>
+                <string>${{ secrets.HOST_URL || 'https://aski-p.github.io/chat-aski' }}</string>
+                <key>DisplayName</key>
+                <string>Chat Aski</string>
+                <key>Icon</key>
+                <dict>
+                  <key>URL</key>
+                  <string>${{ secrets.HOST_URL || 'https://aski-p.github.io/chat-aski' }}/icons/app-icon-192.png</string>
+                </dict>
+              </dict>
+            </array>
+            <key>PayloadDescription</key>
+            <string>Installs Chat Aski as a Home Screen App</string>
+            <key>PayloadDisplayName</key>
+            <string>Chat Aski</string>
+            <key>PayloadIdentifier</key>
+            <string>com.aski.chataski</string>
+            <key>PayloadOrganization</key>
+            <string>Aski</string>
+            <key>PayloadType</key>
+            <string>Profile Provisioning</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+          </dict>
+          </plist>
+          EOF
+
+      - name: Upload iOS Config
+        uses: actions/upload-artifact@v4
+        with:
+          name: chat-aski-ios-install
+          path: ChatAski.mobileconfig
